@@ -1,0 +1,38 @@
+//write function which compare two graphs
+public static void compareGraphs(Graph g1, Graph g2) {
+    //check if graphs are null
+    if (g1 == null || g2 == null) {
+        System.out.println("Graphs are null");
+    }
+    //check if graphs are empty
+    if (g1.isEmpty() || g2.isEmpty()) {
+        System.out.println("Graphs are empty");
+    }
+    //check if graphs have the same number of vertices
+    if (g1.getVertices().size() != g2.getVertices().size()) {
+        System.out.println("Graphs have different number of vertices :" + g1.getVertices().size() + ", " + g2.getVertices().size());
+    }
+    //check if graphs have the same number of edges
+    if (g1.getEdges().size() != g2.getEdges().size()) {
+        System.out.println("Graphs have different number of edges :" + g1.getEdges().size() + ", " + g2.getEdges().size());
+    }
+    
+    int count = 0;
+    //check if graphs have the same vertices
+    for (Vertex v : g1.getVertices()) {
+        if (!g2.getVertices().contains(v)) {
+            // count 
+            System.out.println("Vertex " + v + " is not in graph 2" +g1.getVertices()+ ", " + g2.getVertices());
+            count ++;
+        }
+    }
+    //check if graphs have the same edges
+    for (Edge e : g1.getEdges()) {
+        if (!g2.getEdges().contains(e)) {
+            System.out.println("Edge " + e + " is not in graph 2" + g1.getEdges() + ", " + g2.getEdges());
+            count ++;
+        }
+    }
+    System.out.println("DIFF = count: " + count);
+    return true;
+}

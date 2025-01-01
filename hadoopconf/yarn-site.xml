@@ -1,0 +1,104 @@
+<?xml version="1.0"?>
+<!--
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License. See accompanying LICENSE file.
+-->
+<configuration>
+
+<!-- Site specific YARN configuration properties -->
+<property>
+    <name>yarn.scheduler.minimum-allocation-mb</name>
+    <value>1228</value>
+</property>
+<property>
+    <name>yarn.scheduler.maximum-allocation-mb</name>
+    <value>9830</value>
+</property>
+<property>
+    <name>yarn.nodemanager.resource.memory-mb</name>
+    <value>9830</value>
+</property>
+        <property>
+    <name>yarn.resourcemanager.hostname</name>
+    <value>quyen-master</value>
+          </property>
+        <property>
+            <name>yarn.nodemanager.aux-services</name>
+            <value>mapreduce_shuffle</value>
+        </property>
+        <property>
+            <name>yarn.log-aggregation-enable</name>
+            <value>true</value>
+        </property>
+        <property>
+                <name>yarn.nodemanager.remote-app-log-dir</name>
+                <value>/opt/hadoop/logs</value>
+        </property>
+        <property>
+                <name>yarn.nodemanager.remote-app-log-dir-suffix</name>
+                <value>logs</value>
+        </property>
+<!--    <property>
+                <name>yarn.log-aggregation.retain-seconds</name>
+                <value>-1</value>
+        </property>
+-->
+        <property>
+                <name>yarn.log-aggregation.retain-seconds</name>
+                <value>259200</value>
+        </property>
+
+        <property>
+                <name>yarn.log-aggregation.retain-check-interval-seconds</name>
+                <value>3600</value>
+        </property>
+        <property>
+                <name>yarn.log.server.url</name>
+                <value>http://quyen-master:19888/jobhistory/logs</value>
+        </property>
+        <property>
+            <name>yarn.nodemanager.disk-health-checker.enable</name>
+            <value>false</value>
+        </property>
+        <property>
+            <name>yarn.resourcemanager.scheduler.address</name>
+            <value>quyen-master:8030</value>
+        </property>
+        <property>
+            <name>yarn.resourcemanager.address</name>
+            <value>quyen-master:8032</value>
+        </property>
+        <property>
+            <name>yarn.resourcemanager.webapp.address</name>
+            <value>quyen-master:8088</value>
+        </property>
+        <property>
+            <name>yarn.resourcemanager.resource-tracker.address</name>
+            <value>quyen-master:8031</value>
+        </property>
+        <property>
+            <name>yarn.resourcemanager.admin.address</name>
+            <value>quyen-master:8033</value>
+        </property>
+        <property>
+                <name>yarn.nodemanager.vmem-check-enabled</name>
+                <value>false</value>
+                <description>Whether virtual memory limits will be enforced for containers</description>
+        </property>
+        <property>
+                <name>yarn.nodemanager.vmem-pmem-ratio</name>
+                <value>2.1</value>
+                <description>Ratio between virtual memory to physical memory when setting memory limits for
+containers</description>
+        </property>
+
+</configuration>
